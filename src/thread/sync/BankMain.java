@@ -1,14 +1,12 @@
 package thread.sync;
 
-import thread.sync.test.BalanceAccountV4;
-
 import static thread.util.MyLogger.log;
 import static thread.util.ThreadUtils.sleep;
 
 public class BankMain {
 
     public static void main(String[] args) throws InterruptedException {
-        BankAccount account = new BalanceAccountV4(1000);
+        BankAccount account = new BalanceAccountV5(1000);
 
         Thread t1 = new Thread(new WithdrawTask(account, 800), "t1");
         Thread t2 = new Thread(new WithdrawTask(account, 800), "t2");
