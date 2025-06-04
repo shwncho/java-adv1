@@ -3,7 +3,6 @@ package thread.cas.increment;
 import java.util.ArrayList;
 import java.util.List;
 
-import static thread.util.MyLogger.log;
 import static thread.util.ThreadUtils.sleep;
 
 public class IncrementThreadMain {
@@ -12,6 +11,7 @@ public class IncrementThreadMain {
 
     public static void main(String[] args) throws InterruptedException {
         test(new BasicInteger());
+        test(new VolatileInteger());
     }
 
     private static void test(IncrementInteger incrementInteger) throws InterruptedException {
