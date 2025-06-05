@@ -2,6 +2,7 @@ package thread.cas.increment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static thread.util.ThreadUtils.sleep;
 
@@ -13,6 +14,7 @@ public class IncrementThreadMain {
         test(new BasicInteger());
         test(new VolatileInteger());
         test(new SyncInteger());
+        test(new MyAtomicInteger());
     }
 
     private static void test(IncrementInteger incrementInteger) throws InterruptedException {
